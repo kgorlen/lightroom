@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FreeFileSync XmlFormat="7" XmlType="BATCH">
+    <MainConfig>
+        <Comparison>
+            <Variant>TimeAndSize</Variant>
+            <Symlinks>Exclude</Symlinks>
+            <IgnoreTimeShift/>
+        </Comparison>
+        <SyncConfig>
+            <Variant>TwoWay</Variant>
+            <CustomDirections>
+                <LeftOnly>right</LeftOnly>
+                <RightOnly>left</RightOnly>
+                <LeftNewer>right</LeftNewer>
+                <RightNewer>left</RightNewer>
+                <Different>none</Different>
+                <Conflict>none</Conflict>
+            </CustomDirections>
+            <DetectMovedFiles>false</DetectMovedFiles>
+            <DeletionPolicy>Permanent</DeletionPolicy>
+            <VersioningFolder Style="Replace"/>
+        </SyncConfig>
+        <GlobalFilter>
+            <Include>
+                <Item>*</Item>
+            </Include>
+            <Exclude>
+                <Item>\System Volume Information\</Item>
+                <Item>\$Recycle.Bin\</Item>
+                <Item>\RECYCLER\</Item>
+                <Item>\RECYCLED\</Item>
+                <Item>*\desktop.ini</Item>
+                <Item>*\thumbs.db</Item>
+                <Item>*\_gsdata_</Item>
+                <Item>*\@Recycle</Item>
+                <Item>*\.@__thumb</Item>
+                <Item>*Cache*</Item>
+                <Item>*cache*</Item>
+                <Item/>
+            </Exclude>
+            <TimeSpan Type="None">0</TimeSpan>
+            <SizeMin Unit="None">0</SizeMin>
+            <SizeMax Unit="None">0</SizeMax>
+        </GlobalFilter>
+        <FolderPairs>
+            <Pair>
+                <Left>%AppData%\Adobe\Lightroom</Left>
+                <Right>\\NAS0\home\AppData\Roaming\Adobe\Lightroom</Right>
+                <LocalFilter>
+                    <Include>
+                        <Item>*</Item>
+                    </Include>
+                    <Exclude>
+                        <Item>*\logs</Item>
+                        <Item>\0*\|\1*\|\2*\|\3*\|\4*\|\5*\|\6*\|\7*\|\8*\|\9*\</Item>
+                    </Exclude>
+                    <TimeSpan Type="None">0</TimeSpan>
+                    <SizeMin Unit="None">0</SizeMin>
+                    <SizeMax Unit="None">0</SizeMax>
+                </LocalFilter>
+            </Pair>
+        </FolderPairs>
+        <OnCompletion/>
+    </MainConfig>
+    <BatchConfig>
+        <HandleError>Ignore</HandleError>
+        <RunMinimized>true</RunMinimized>
+        <LogfileFolder Limit="100">%AppData%\FreeFileSync\Logs</LogfileFolder>
+    </BatchConfig>
+</FreeFileSync>
