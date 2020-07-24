@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FreeFileSync XmlType="BATCH" XmlFormat="16">
+    <Compare>
+        <Variant>TimeAndSize</Variant>
+        <Symlinks>Exclude</Symlinks>
+        <IgnoreTimeShift/>
+    </Compare>
+    <Synchronize>
+        <Variant>TwoWay</Variant>
+        <DetectMovedFiles>false</DetectMovedFiles>
+        <DeletionPolicy>Permanent</DeletionPolicy>
+        <VersioningFolder Style="Replace"/>
+    </Synchronize>
+    <Filter>
+        <Include>
+            <Item>*</Item>
+        </Include>
+        <Exclude>
+            <Item>\System Volume Information\</Item>
+            <Item>\$Recycle.Bin\</Item>
+            <Item>\RECYCLER\</Item>
+            <Item>\RECYCLED\</Item>
+            <Item>*\desktop.ini</Item>
+            <Item>*\thumbs.db</Item>
+            <Item>*\_gsdata_</Item>
+            <Item>*\@Recycle</Item>
+            <Item>*Cache*</Item>
+            <Item>*cache*</Item>
+        </Exclude>
+        <TimeSpan Type="None">0</TimeSpan>
+        <SizeMin Unit="None">0</SizeMin>
+        <SizeMax Unit="None">0</SizeMax>
+    </Filter>
+    <FolderPairs>
+        <Pair>
+            <Left>%AppData%\Affinity</Left>
+            <Right>\\NAS0\home\AppData\Roaming\Affinity</Right>
+            <Filter>
+                <Include>
+                    <Item>*</Item>
+                </Include>
+                <Exclude>
+                    <Item>\Common</Item>
+                    <Item>*\autosave</Item>
+                    <Item>*\backup</Item>
+                    <Item>*\CrashReports</Item>
+                    <Item>*\temp</Item>
+                    <Item>*\Log.txt</Item>
+                </Exclude>
+                <TimeSpan Type="None">0</TimeSpan>
+                <SizeMin Unit="None">0</SizeMin>
+                <SizeMax Unit="None">0</SizeMax>
+            </Filter>
+        </Pair>
+        <Pair>
+            <Left>%AppData%\Adobe\Adobe Photoshop 2020</Left>
+            <Right>\\NAS0\home\AppData\Roaming\Adobe\Adobe Photoshop 2020</Right>
+            <Filter>
+                <Include>
+                    <Item>*.csf</Item>
+                    <Item>*.json</Item>
+                    <Item>*.psp</Item>
+                    <Item>*.psw</Item>
+                </Include>
+                <Exclude/>
+                <TimeSpan Type="None">0</TimeSpan>
+                <SizeMin Unit="None">0</SizeMin>
+                <SizeMax Unit="None">0</SizeMax>
+            </Filter>
+        </Pair>
+        <Pair>
+            <Left>%AppData%\Adobe\Adobe Photoshop CC 2019</Left>
+            <Right>\\NAS0\home\AppData\Roaming\Adobe\Adobe Photoshop CC 2019</Right>
+            <Filter>
+                <Include>
+                    <Item>*.csf</Item>
+                    <Item>*.json</Item>
+                    <Item>*.psp</Item>
+                    <Item>*.psw</Item>
+                </Include>
+                <Exclude/>
+                <TimeSpan Type="None">0</TimeSpan>
+                <SizeMin Unit="None">0</SizeMin>
+                <SizeMax Unit="None">0</SizeMax>
+            </Filter>
+        </Pair>
+        <Pair>
+            <Left>%AppData%\Adobe\Adobe Photoshop CS6</Left>
+            <Right>\\NAS0\home\AppData\Roaming\Adobe\Adobe Photoshop CS6</Right>
+            <Filter>
+                <Include>
+                    <Item>*.csf</Item>
+                    <Item>*.json</Item>
+                    <Item>*.psp</Item>
+                    <Item>*.psw</Item>
+                </Include>
+                <Exclude/>
+                <TimeSpan Type="None">0</TimeSpan>
+                <SizeMin Unit="None">0</SizeMin>
+                <SizeMax Unit="None">0</SizeMax>
+            </Filter>
+        </Pair>
+        <Pair>
+            <Left>%AppData%\Adobe\Adobe Photoshop CS5</Left>
+            <Right>\\NAS0\home\AppData\Roaming\Adobe\Adobe Photoshop CS5</Right>
+            <Filter>
+                <Include>
+                    <Item>*.csf</Item>
+                    <Item>*.json</Item>
+                    <Item>*.psp</Item>
+                    <Item>*.psw</Item>
+                </Include>
+                <Exclude/>
+                <TimeSpan Type="None">0</TimeSpan>
+                <SizeMin Unit="None">0</SizeMin>
+                <SizeMax Unit="None">0</SizeMax>
+            </Filter>
+        </Pair>
+        <Pair>
+            <Left>%AppData%\Adobe\Bridge 2020</Left>
+            <Right>\\NAS0\home\AppData\Roaming\Adobe\Bridge 2020</Right>
+            <Filter>
+                <Include>
+                    <Item>*</Item>
+                </Include>
+                <Exclude>
+                    <Item>*.log</Item>
+                    <Item>*.txt</Item>
+                </Exclude>
+                <TimeSpan Type="None">0</TimeSpan>
+                <SizeMin Unit="None">0</SizeMin>
+                <SizeMax Unit="None">0</SizeMax>
+            </Filter>
+        </Pair>
+        <Pair>
+            <Left>%AppData%\Adobe\Bridge CC 2019</Left>
+            <Right>\\NAS0\home\AppData\Roaming\Adobe\Bridge CC 2019</Right>
+            <Filter>
+                <Include>
+                    <Item>*</Item>
+                </Include>
+                <Exclude>
+                    <Item>*.log</Item>
+                    <Item>*.txt</Item>
+                </Exclude>
+                <TimeSpan Type="None">0</TimeSpan>
+                <SizeMin Unit="None">0</SizeMin>
+                <SizeMax Unit="None">0</SizeMax>
+            </Filter>
+        </Pair>
+        <Pair>
+            <Left>%AppData%\Adobe\Bridge CS6</Left>
+            <Right>\\NAS0\home\AppData\Roaming\Adobe\Bridge CS6</Right>
+            <Filter>
+                <Include>
+                    <Item>*</Item>
+                </Include>
+                <Exclude>
+                    <Item>*.log</Item>
+                    <Item>*.txt</Item>
+                </Exclude>
+                <TimeSpan Type="None">0</TimeSpan>
+                <SizeMin Unit="None">0</SizeMin>
+                <SizeMax Unit="None">0</SizeMax>
+            </Filter>
+        </Pair>
+        <Pair>
+            <Left>%AppData%\Adobe\Bridge CS5</Left>
+            <Right>\\NAS0\home\AppData\Roaming\Adobe\Bridge CS5</Right>
+            <Filter>
+                <Include>
+                    <Item>*</Item>
+                </Include>
+                <Exclude>
+                    <Item>*.log</Item>
+                    <Item>*.txt</Item>
+                </Exclude>
+                <TimeSpan Type="None">0</TimeSpan>
+                <SizeMin Unit="None">0</SizeMin>
+                <SizeMax Unit="None">0</SizeMax>
+            </Filter>
+        </Pair>
+        <Pair>
+            <Left>%AppData%\Adobe\CameraRaw</Left>
+            <Right>\\NAS0\home\AppData\Roaming\Adobe\CameraRaw</Right>
+            <Filter>
+                <Include>
+                    <Item>*</Item>
+                </Include>
+                <Exclude>
+                    <Item>\GPU</Item>
+                    <Item>\Logs</Item>
+                </Exclude>
+                <TimeSpan Type="None">0</TimeSpan>
+                <SizeMin Unit="None">0</SizeMin>
+                <SizeMax Unit="None">0</SizeMax>
+            </Filter>
+        </Pair>
+        <Pair>
+            <Left>%AppData%\Adobe\Color</Left>
+            <Right>\\NAS0\home\AppData\Roaming\Adobe\Color</Right>
+        </Pair>
+        <Pair>
+            <Left>%AppData%\Adobe\Plugins</Left>
+            <Right>\\NAS0\home\AppData\Roaming\Adobe\Plugins</Right>
+        </Pair>
+        <Pair>
+            <Left>%AppData%\FreeFileSync\Config</Left>
+            <Right>\\NAS0\home\AppData\Roaming\FreeFileSync\Config</Right>
+        </Pair>
+        <Pair>
+            <Left>%AppData%\Adobe\Lightroom</Left>
+            <Right>\\NAS0\home\AppData\Roaming\Adobe\Lightroom</Right>
+            <Filter>
+                <Include>
+                    <Item>*</Item>
+                </Include>
+                <Exclude>
+                    <Item>*\logs</Item>
+                    <Item>\0*\|\1*\|\2*\|\3*\|\4*\|\5*\|\6*\|\7*\|\8*\|\9*\</Item>
+                </Exclude>
+                <TimeSpan Type="None">0</TimeSpan>
+                <SizeMin Unit="None">0</SizeMin>
+                <SizeMax Unit="None">0</SizeMax>
+            </Filter>
+        </Pair>
+        <Pair>
+            <Left>%csidl_Desktop%</Left>
+            <Right>\\NAS0\home\Desktop</Right>
+            <Filter>
+                <Include>
+                    <Item>*</Item>
+                </Include>
+                <Exclude>
+                    <Item>\*.lnk</Item>
+                </Exclude>
+                <TimeSpan Type="None">0</TimeSpan>
+                <SizeMin Unit="None">0</SizeMin>
+                <SizeMax Unit="None">0</SizeMax>
+            </Filter>
+        </Pair>
+        <Pair>
+            <Left>%csidl_Favorites%</Left>
+            <Right>\\NAS0\home\Favorites</Right>
+            <Filter>
+                <Include>
+                    <Item>*</Item>
+                </Include>
+                <Exclude>
+                    <Item>bing.url</Item>
+                </Exclude>
+                <TimeSpan Type="None">0</TimeSpan>
+                <SizeMin Unit="None">0</SizeMin>
+                <SizeMax Unit="None">0</SizeMax>
+            </Filter>
+        </Pair>
+    </FolderPairs>
+    <Errors Ignore="true" Retry="0" Delay="5"/>
+    <PostSyncCommand Condition="Completion"/>
+    <LogFolder>%AppData%\FreeFileSync\Logs</LogFolder>
+    <EmailNotification Condition="Always"/>
+    <Batch>
+        <ProgressDialog Minimized="true" AutoClose="true"/>
+        <ErrorDialog>Show</ErrorDialog>
+        <PostSyncAction>None</PostSyncAction>
+    </Batch>
+</FreeFileSync>

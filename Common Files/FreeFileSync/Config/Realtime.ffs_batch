@@ -24,9 +24,6 @@
             <Item>*\thumbs.db</Item>
             <Item>*\_gsdata_</Item>
             <Item>*\@Recycle</Item>
-            <Item>*\.@__thumb</Item>
-            <Item>*Cache*</Item>
-            <Item>*cache*</Item>
         </Exclude>
         <TimeSpan Type="None">0</TimeSpan>
         <SizeMin Unit="None">0</SizeMin>
@@ -34,15 +31,33 @@
     </Filter>
     <FolderPairs>
         <Pair>
-            <Left>%AppData%\Adobe\Lightroom</Left>
-            <Right>\\NAS0\home\AppData\Roaming\Adobe\Lightroom</Right>
+            <Left>%Public%\Pictures\Screen Saver Photos</Left>
+            <Right>\\NAS0\Multimedia\Pictures\Slideshows\Screen Saver Photos</Right>
             <Filter>
                 <Include>
                     <Item>*</Item>
                 </Include>
                 <Exclude>
-                    <Item>*\logs</Item>
-                    <Item>\0*\|\1*\|\2*\|\3*\|\4*\|\5*\|\6*\|\7*\|\8*\|\9*\</Item>
+                    <Item>*\tmp</Item>
+                </Exclude>
+                <TimeSpan Type="None">0</TimeSpan>
+                <SizeMin Unit="None">0</SizeMin>
+                <SizeMax Unit="None">0</SizeMax>
+            </Filter>
+        </Pair>
+        <Pair>
+            <Left>%ProgramFiles%\Common Files\LR Plugins</Left>
+            <Right>\\NAS0\Household\Household Documents\Computer\Software\Lightroom\LR Plugins</Right>
+        </Pair>
+        <Pair>
+            <Left>%ProgramFiles%\Common Files\FreeFileSync</Left>
+            <Right>\\NAS0\Household\Household Documents\Computer\Software\FreeFileSync\Common Files</Right>
+            <Filter>
+                <Include>
+                    <Item>*</Item>
+                </Include>
+                <Exclude>
+                    <Item>\Logs</Item>
                 </Exclude>
                 <TimeSpan Type="None">0</TimeSpan>
                 <SizeMin Unit="None">0</SizeMin>
@@ -52,7 +67,7 @@
     </FolderPairs>
     <Errors Ignore="true" Retry="0" Delay="5"/>
     <PostSyncCommand Condition="Completion"/>
-    <LogFolder>%AppData%\FreeFileSync\Logs</LogFolder>
+    <LogFolder>%ProgramFiles%\Common Files\FreeFileSync\Logs</LogFolder>
     <EmailNotification Condition="Always"/>
     <Batch>
         <ProgressDialog Minimized="true" AutoClose="true"/>
