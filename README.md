@@ -1,7 +1,7 @@
 # Lightroom Classic Catalogs on Network Attached Storage
 
 ## Background
-I currently have about 30K photos (1TB) stored on a QNAP TS-251+ NAS
+I currently have about 30K photos (>1TB) stored on a QNAP TS-251+ NAS
 (Network Attached Storage) device with a capacity of 3TB (mirrored).
 The NAS is connected by gigabit Ethernet to a custom-built PC and a
 mini PC, both running Windows 10.  To make storage management as
@@ -49,29 +49,47 @@ etc.
 
 Also, *LrC* currently requires that the `Previews.lrdata` folder must
 reside in the same folder as the catalog. Thus, when the catalog is on
-a network drive, previews will also reside there, slowing performance.
+a network drive, previews will also reside there, possibly slowing
+performance.
+
+Setting up the NAS:
+
+  * with an uninterruptible power supply (UPS), to protect against
+	power failures,
+	
+  * with RAID, to protect against single-drive failures, and
+  
+  * as an "always up" device automatically running nightly backups,
+	when *LrC* catalogs are less likely to be in use,
+	
+provides protections not typically provided on desktop PCs that offset
+the added risk of storing and accessing catalogs on the NAS.
 
 ## Basic Setup
-1. *LrC* will create and access catalogs on a network folder
-(`\\NAS0\home\Pictures` in this example) by means of a letter drive
-(`P:` in this example).  Create a batch file `substP.bat` containing
-the following commands:
+*LrC* will create and access catalogs on a network folder
+(`\\NAS0\home\Pictures\Lightroom` in this example) by means of a
+letter drive (`L:` in this example).
 
-		:MAP
-		subst P: \\NAS0\home\Pictures
-		if not exist P:\ (
-			ping -n 6 127.0.0.1>nul
-			goto MAP
-		)
+1. Install the `catmap.bat` script according to the instructions in
+that file.
 
-	in the startup folder for each user on each machine running *LrC*:
+1. The letter drive must be mapped when a user logs in.  Copy the
+sample `Startup\catmap.bat` shortcut to the startup folder for each
+user on each machine running *LrC*:
 
 		%AppData%\Microsoft\Windows\Start Menu\Programs\Startup
 
-1. Create (or move) catalog(s) to `P:`, e.g. to `P:\Lightroom\Catalogs\My
-Photos`
+	and if necessary, edit the shortcut `Target` property to use a
+	different letter drive and network folder.
+	
+	Be sure to use the same letter drive and network folder for a
+	given user on all PCs if synchronizing *LrC* settings across PCs as
+	described below.
 
-1. When *LrC* opens a catalog, it creates a `.lrcat.lock` file in the
+1. Create (or move) catalog folder(s) to `L:`, e.g. to `L:\Catalogs\My
+   Photos`
+
+When *LrC* opens a catalog, it creates a `.lrcat.lock` file in the
 catalog's folder, which prevents other instances of *LrC* from accessing
 the same catalog at the same time.  However, if *LrC* crashes or is
 running when "Sleep", or "Switch user" is done, the catalog is left
@@ -88,14 +106,14 @@ thus, such a backup is not reliably valid.
   * Install `gracefulexit.bat` (instructions are in that file) and use
     it to put a PC to sleep, switch user, and logoff.
 
-  * To make catalogs immediately accessible from another computer
-    after *LrC* exits, disable Windows oplocks on `.lock files` (and
-    FreeFileFileSync `sync.ffs_db` databases, see below) by adding the
-    following to `/etc/smb.conf` on the NAS:
+  * *OPTIONAL:* To make catalogs immediately accessible from another
+    computer after *LrC* exits, disable Windows oplocks on `.lock
+    files` (and FreeFileFileSync `sync.ffs_db` databases, see below)
+    by adding the following to `/etc/smb.conf` on the NAS:
 
 		veto oplock files = /*.lock/sync.ffs_db/
 
-## *OPTIONAL:* Synchronize *LrC* settings across all machines
+## *OPTIONAL:* Synchronize *LrC* settings across all PCs
 
 *LrC* changes settings files frequently when running, so synchronization
 is implemented by running *LrC* via a shortcut which, in turn, runs
@@ -127,7 +145,7 @@ after running *LrC* to sync settings from/to a folder on the NAS:
 1. Pin the `lightroom` shortcut to each user's Start Menu and/or
    taskbar (<https://www.digitalcitizen.life/how-pin-special-windows-shortcuts-taskbar>).
 
-## *OPTIONAL:* Synchronize *LrC* plug-ins across all machines
+## *OPTIONAL:* Synchronize *LrC* plug-ins across all PCs
 
 *LrC* plug-ins are synchronized when updated by a file synchronization
 utility (FreeFileSync in this case).  For each machine:
