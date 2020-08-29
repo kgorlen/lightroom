@@ -276,7 +276,7 @@ folder to confirm that folders are synchronizing.
 
 [5] Post by johnrellis, <https://community.adobe.com/t5/lightroom-classic/operating-lightroom-cc-classic-via-network-drive/m-p/9997623?page=1#M115849>
 
-[6] *File Locking and Concurrency in SQLite Version 3*, <https://sqlite.org/lockingv3.html>
+[6] *Write-Ahead Logging*, <https://sqlite.org/wal.html>
 
 [7] *Samba Locks and Oplocks*, <https://www.oreilly.com/openbook/samba/book/ch05_05.html>
 
