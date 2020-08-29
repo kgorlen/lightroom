@@ -30,22 +30,22 @@ clearly better, economical alternatives.
 ## CAUTION!
 Lightroom Classic (*LrC*) normally will not access a catalog that
 resides on a network drive.  In 2007, Adobe engineer Dan Tull[4][5]
-tested *LrC* catalogs on a corporate network drive by disconnecting the
-cable and observed catalog corruption, so Adobe coded *LrC* to disallow
-them on network drives.  Technically, however, network drives are
-designed to behave like local drives.  An *LrC* catalog is an SQLite[6]
-database, the integrity of which is maintained via standard Windows
-file locking, which is also supported by SMB[7], the protocol Windows
-uses to access files on network drives.  Thus, catalog corruption is
-the result of hardware failure or software defects, not inherent
-technical limitations or incompatibilities.  But since more hardware
-and software is involved in accessing network-attached storage than
-internal or directly-attached external storage, the risk of catalog
-corruption is greater.  However, there is also risk in other methods
-proposed[8] for using a catalog from multiple machines, such as
-inadvertently disconnecting an external hard drive while Lightroom is
-running or while synchronizing with Dropbox, Google Drive, One Drive,
-etc.
+tested *LrC* catalogs on a corporate network drive by disconnecting
+the cable and observed catalog corruption, so Adobe coded *LrC* to
+disallow them on network drives.  Technically, however, network drives
+are designed to behave like local drives.  An *LrC* catalog is an
+SQLite[6] database, the integrity of which is maintained via standard
+Windows file operations, which are also supported by SMB[7], the
+protocol Windows uses to access files on network drives.  Thus,
+catalog corruption is the result of hardware failure or software
+defects, not inherent technical limitations or incompatibilities.  But
+since more hardware and software is involved in accessing
+network-attached storage than internal or directly-attached external
+storage, the risk of catalog corruption is greater.  However, there is
+also risk in other methods proposed[8] for using a catalog from
+multiple machines, such as inadvertently disconnecting an external
+hard drive while Lightroom is running or while synchronizing with
+Dropbox, Google Drive, One Drive, etc.
 
 Also, *LrC* currently requires that the `Previews.lrdata` folder must
 reside in the same folder as the catalog. Thus, when the catalog is on
