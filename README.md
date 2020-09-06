@@ -106,10 +106,11 @@ thus, such a backup is not reliably valid.
   * Install `gracefulexit.bat` (instructions are in that file) and use
     it to put a PC to sleep, switch user, and logoff.
 
-  * *OPTIONAL:* To make catalogs immediately accessible from another
-    computer after *LrC* exits, disable Windows oplocks on `.lock
-    files` (and FreeFileFileSync `sync.ffs_db` databases, see below)
-    by adding the following to `/etc/smb.conf` on the NAS:
+  * *OPTIONAL:* Files can remain locked when applications exit
+	abnormally or PCs crash.  To reduce occurrences of this problem,
+	disable Windows oplocks on `.lock files` (and FreeFileFileSync
+	`sync.ffs_db` databases, see below) by adding the following to
+	`/etc/smb.conf` on the NAS:
 
 		veto oplock files = /*.lock/sync.ffs_db/
 
