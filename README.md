@@ -38,14 +38,14 @@ SQLite[6] database, the integrity of which is maintained via standard
 Windows file operations, which are also supported by SMB[7], the
 protocol Windows uses to access files on network drives.  Thus,
 catalog corruption is the result of hardware failure or software
-defects, not inherent technical limitations or incompatibilities.  But
-since more hardware and software is involved in accessing
-network-attached storage than internal or directly-attached external
-storage, the risk of catalog corruption is greater.  However, there is
-also risk in other methods proposed[8] for using a catalog from
-multiple machines, such as inadvertently disconnecting an external
-hard drive while Lightroom is running or while synchronizing with
-Dropbox, Google Drive, One Drive, etc.
+defects, not inherent technical limitations or
+incompatibilities.[8][9] But since more hardware and software is
+involved in accessing network-attached storage than internal or
+directly-attached external storage, the risk of catalog corruption is
+greater.  However, there is also risk in other methods proposed[10] for
+using a catalog from multiple machines, such as inadvertently
+disconnecting an external hard drive while Lightroom is running or
+while synchronizing with Dropbox, Google Drive, One Drive, etc.
 
 Also, *LrC* currently requires that the `Previews.lrdata` folder must
 reside in the same folder as the catalog. Thus, when the catalog is on
@@ -281,5 +281,9 @@ folder to confirm that folders are synchronizing.
 
 [7] *Samba Locks and Oplocks*, <https://www.oreilly.com/openbook/samba/book/ch05_05.html>
 
-[8] *Sharing Lightroom Catalog with Multiple Computers*, <https://photographylife.com/sharing-lightroom-catalog-with-multiple-computers>
+[8] *Client/Server Applications*, <https://www.sqlite.org/whentouse.html>
+
+[9] *More information*, <https://helpx.adobe.com/lightroom-classic/kb/lightroom-error-catalog-cannot-be-opened-lrcat-lock.html>
+
+[10] *Sharing Lightroom Catalog with Multiple Computers*, <https://photographylife.com/sharing-lightroom-catalog-with-multiple-computers>
 
