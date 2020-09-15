@@ -83,12 +83,12 @@ user on each machine running _LrC_:
 +
 		%AppData%\Microsoft\Windows\Start Menu\Programs\Startup
 +
-	and if necessary, edit the shortcut `Target` property to use a
-	different letter drive and network folder.
+and if necessary, edit the shortcut `Target` property to use a
+different letter drive and network folder.
 +	
-	Be sure to use the same letter drive and network folder for a
-	given user on all PCs if synchronizing _LrC_ settings across PCs as
-	described below.
+Be sure to use the same letter drive and network folder for a
+given user on all PCs if synchronizing _LrC_ settings across PCs as
+described below.
 
 . Create (or move) catalog folder(s) to `L:`, e.g. to `L:\Catalogs\My
    Photos`
@@ -121,7 +121,7 @@ thus, such a backup is not reliably valid.
 
 _LrC_ changes settings files frequently when running, so synchronization
 is implemented by running _LrC_ via a shortcut which, in turn, runs
-a file synchronization utility (FreeFileSync in this case) before and
+a file synchronization utility (_FreeFileSync_ in this case) before and
 after running _LrC_ to sync settings from/to a folder on the NAS:
 
 	C:\Windows\System32\cmd.exe /c ""%AppData%\FreeFileSync\Config\lightroom.ffs_batch" && "%ProgramFiles%\Adobe\Adobe Lightroom Classic\Lightroom.exe" & "%AppData%\FreeFileSync\Config\lightroom.ffs_batch""
@@ -152,9 +152,9 @@ after running _LrC_ to sync settings from/to a folder on the NAS:
 == *OPTIONAL:* Synchronize _LrC_ plug-ins across all PCs
 
 _LrC_ plug-ins are synchronized when updated by a file synchronization
-utility (FreeFileSync in this case).  For each machine:
+utility (_FreeFileSync_ in this case).  For each machine:
 
-. Install (https://www.freefilesync.org)[FreeFileSync] (_FFS_).
+. Install https://www.freefilesync.org)[_FreeFileSync_] (_FFS_).
 
 . Create the `%CommonProgramFiles%\FreeFileSync\Config` folder to
    store the `Realtime.ffs_batch` and `Realtime.ffs_real` files.
@@ -224,7 +224,7 @@ are synchronizing.
 
 Photoshop, Bridge, CameraRaw, Color, and Plugins settings are
 synchronized when updated by a file synchronization utility
-(FreeFileSync in this case), and also by `gracefulexit.bat`
+(_FreeFileSync_ in this case), and also by `gracefulexit.bat`
 on sleep, switch user, and logoff.
 
 . Create folders on the NAS for each user's Photoshop settings, e.g.:
@@ -278,7 +278,7 @@ folder to confirm that folders are synchronizing.
 
 * [[[cpvm,3]]] _Running CrashPlan in an Ubuntu VM_, https://forum.qnap.com/viewtopic.php?t=117951
 
-* [[[Tull,4]]] Reply by Dan Tull, Adobe Employee, https://feedback.photoshop.com/photoshop_family/topics/multi_user_multi_computer?topic-reply-list[settings][filter_by]=all&topic-reply-list[settings][reply_id]=5744549#reply_5744549
+* [[[Tull,4]]] Reply by Dan Tull, Adobe Employee, link:++https://feedback.photoshop.com/photoshop_family/topics/multi_user_multi_computer?topic-reply-list[settings][filter_by]=all&topic-reply-list[settings][reply_id]=5744549#reply_5744549++
 
 * [[[Rellis,5]]] Post by johnrellis, https://community.adobe.com/t5/lightroom-classic/operating-lightroom-cc-classic-via-network-drive/m-p/9997623?page=1#M115849
 
@@ -292,9 +292,9 @@ folder to confirm that folders are synchronizing.
 
 * [[[network,10]]] _Client/Server Applications_, https://www.sqlite.org/whentouse.html
 
-* [[[multi,11]]] _(5) Can multiple applications or multiple instances of the same application access a single database file at the same time?_, https://www.sqlite.org/faq.html
+* [[[multi,11]]] _(5) Can multiple applications or multiple instances of the same application access a single database file at the same time?_, https://www.sqlite.org/faq.html#q5
 
-* [[[threads,12]]] _(6) Is SQLite threadsafe?_, https://www.sqlite.org/faq.html
+* [[[threads,12]]] _(6) Is SQLite threadsafe?_, https://www.sqlite.org/faq.html#q6
 
 * [[[corrupt,13]]] _How To Corrupt An SQLite Database File_, https://www.sqlite.org/howtocorrupt.html
 
