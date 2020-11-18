@@ -53,24 +53,8 @@
             </Filter>
         </Pair>
         <Pair>
-            <Left>%AppData%\Adobe\Adobe Photoshop 2020</Left>
-            <Right>\\NAS0\home\AppData\Roaming\Adobe\Adobe Photoshop 2020</Right>
-            <Filter>
-                <Include>
-                    <Item>*.csf</Item>
-                    <Item>*.json</Item>
-                    <Item>*.psp</Item>
-                    <Item>*.psw</Item>
-                </Include>
-                <Exclude/>
-                <TimeSpan Type="None">0</TimeSpan>
-                <SizeMin Unit="None">0</SizeMin>
-                <SizeMax Unit="None">0</SizeMax>
-            </Filter>
-        </Pair>
-        <Pair>
-            <Left>%AppData%\Adobe\Adobe Photoshop CC 2019</Left>
-            <Right>\\NAS0\home\AppData\Roaming\Adobe\Adobe Photoshop CC 2019</Right>
+            <Left>%AppData%\Adobe\Adobe Photoshop 2021</Left>
+            <Right>\\NAS0\home\AppData\Roaming\Adobe\Adobe Photoshop 2021</Right>
             <Filter>
                 <Include>
                     <Item>*.csf</Item>
@@ -117,24 +101,8 @@
             </Filter>
         </Pair>
         <Pair>
-            <Left>%AppData%\Adobe\Bridge 2020</Left>
-            <Right>\\NAS0\home\AppData\Roaming\Adobe\Bridge 2020</Right>
-            <Filter>
-                <Include>
-                    <Item>*</Item>
-                </Include>
-                <Exclude>
-                    <Item>*.log</Item>
-                    <Item>*.txt</Item>
-                </Exclude>
-                <TimeSpan Type="None">0</TimeSpan>
-                <SizeMin Unit="None">0</SizeMin>
-                <SizeMax Unit="None">0</SizeMax>
-            </Filter>
-        </Pair>
-        <Pair>
-            <Left>%AppData%\Adobe\Bridge CC 2019</Left>
-            <Right>\\NAS0\home\AppData\Roaming\Adobe\Bridge CC 2019</Right>
+            <Left>%AppData%\Adobe\Bridge 2021</Left>
+            <Right>\\NAS0\home\AppData\Roaming\Adobe\Bridge 2021</Right>
             <Filter>
                 <Include>
                     <Item>*</Item>
@@ -209,22 +177,6 @@
             <Right>\\NAS0\home\AppData\Roaming\FreeFileSync\Config</Right>
         </Pair>
         <Pair>
-            <Left>%AppData%\Adobe\Lightroom</Left>
-            <Right>\\NAS0\home\AppData\Roaming\Adobe\Lightroom</Right>
-            <Filter>
-                <Include>
-                    <Item>*</Item>
-                </Include>
-                <Exclude>
-                    <Item>*\logs</Item>
-                    <Item>\0*\|\1*\|\2*\|\3*\|\4*\|\5*\|\6*\|\7*\|\8*\|\9*\</Item>
-                </Exclude>
-                <TimeSpan Type="None">0</TimeSpan>
-                <SizeMin Unit="None">0</SizeMin>
-                <SizeMax Unit="None">0</SizeMax>
-            </Filter>
-        </Pair>
-        <Pair>
             <Left>%csidl_Desktop%</Left>
             <Right>\\NAS0\home\Desktop</Right>
             <Filter>
@@ -248,6 +200,22 @@
                 </Include>
                 <Exclude>
                     <Item>bing.url</Item>
+                </Exclude>
+                <TimeSpan Type="None">0</TimeSpan>
+                <SizeMin Unit="None">0</SizeMin>
+                <SizeMax Unit="None">0</SizeMax>
+            </Filter>
+        </Pair>
+        <Pair>
+            <Left>%AppData%\Adobe\Lightroom</Left>
+            <Right>\\NAS0\home\AppData\Roaming\Adobe\Lightroom</Right>
+            <Filter>
+                <Include>
+                    <Item>*</Item>
+                </Include>
+                <Exclude>
+                    <Item>*\logs</Item>
+                    <Item>\0*\|\1*\|\2*\|\3*\|\4*\|\5*\|\6*\|\7*\|\8*\|\9*\</Item>
                 </Exclude>
                 <TimeSpan Type="None">0</TimeSpan>
                 <SizeMin Unit="None">0</SizeMin>

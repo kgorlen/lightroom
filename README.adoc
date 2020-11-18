@@ -236,7 +236,7 @@ on sleep, switch user, and logoff.
 		\\<my NAS>\home\AppData\Roaming\Adobe\Plugins
 +		
 The exact names of the `Photoshop` and `Bridge` folders depend upon
-the versions installed, e.g. `Photoshop 2020` and `Bridge 2020`.
+the versions installed, e.g. `Photoshop 2021` and `Bridge 2021`.
 
 . Copy the following files to each user's `%AppData%\FreeFileSync\Config` folder:
 
