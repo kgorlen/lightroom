@@ -271,7 +271,7 @@ folder to confirm that folders are synchronizing.
 [bibliography]
 * [[[dataless,1]]] _How to Change the Location of User Folders in Windows 10_, https://www.dummies.com/computers/operating-systems/windows-10/how-to-change-the-location-of-user-folders-in-windows-10/
 
-* [[[duplicay,2]]] _Duplicacy: A lock-free deduplication cloud backup tool_, https://github.com/gilbertchen/duplicacy
+* [[[duplicacy,2]]] _Duplicacy: A lock-free deduplication cloud backup tool_, https://github.com/gilbertchen/duplicacy
 
 * [[[b2,3]]] _Backblaze B2 Storage_, https://duplicacy.com/backblaze.html
 
