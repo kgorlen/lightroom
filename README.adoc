@@ -107,7 +107,7 @@ thus, such a backup is not reliably valid.
   * Install `gracefulexit.bat` (instructions are in that file) and use
     it to put a PC to sleep, switch user, and logoff.
 
-  * *OPTIONAL:* To reduce occurrences of abandoned file locks, disable
+  * *OPTIONAL:* To reduce occurrences of abandoned file locks<<veto>>, disable
 	Windows oplocks on `.lock files` (and FreeFileFileSync
 	`sync.ffs_db` databases, see below) by adding the following to
 	`/etc/smb.conf` on the NAS:
@@ -297,5 +297,6 @@ folder to confirm that folders are synchronizing.
 
 * [[[risky,14]]] _Sharing Lightroom Catalog with Multiple Computers_, https://photographylife.com/sharing-lightroom-catalog-with-multiple-computers
 
-* [[[lock,15]]] _More information_, https://helpx.adobe.com/lightroom-classic/kb/lightroom-error-catalog-cannot-be-opened-lrcat-lock.html
+* [[[lock,15]]] _Error: Lightroom catalog cannot be opened, More information_, https://helpx.adobe.com/lightroom-classic/kb/lightroom-error-catalog-cannot-be-opened-lrcat-lock.html
 
+* [[[veto,16]]] _How to prevent samba from holding a file lock after a client disconnects_, https://serverfault.com/questions/204812/how-to-prevent-samba-from-holding-a-file-lock-after-a-client-disconnects
