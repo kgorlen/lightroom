@@ -1,6 +1,6 @@
 @echo off
 rem
-rem Kill tasks that lock shared files, then sleep, switch user, or lock session
+rem Kill tasks that lock shared files, then sleep, switch user, or log off
 rem
 rem Usage:
 rem		gracefulexit {sleep|switch|lock} task1 task2 ...
@@ -11,14 +11,16 @@ rem		Copy gracefulexit.bat to C:\Program Files\gracefulexit
 rem		Copy sleep.lnk, switch.lnk, lock.lnk, logoff.lnk to:
 rem			C:\ProgramData\Microsoft\Windows\Start Menu\Programs\gracefulexit
 rem		Pin GracefileExit -> sleep.lnk, switch.lnk, lock.lnk, logoff.lnk to Start Menu
-rem		Install nircmd/nircmdc (http://www.nirsoft.net/utils/nircmd.html):
-rem			Copy nircmd.exe, nircmdc.exe to C:\Windows\System32
 rem		Control Panel->Hardware and Sound->Power Options->System Settings
 rem			->Choose what the power button does: Disable Sleep and Lock menu items
 rem		
 rem Location of FreeFileSync .ffs_batch file:
 set syncfile=%APPDATA%\FreeFileSync\Config\full.ffs_batch
 
+rem	Version 2.2:
+rem
+rem 	Replace nircmd with Powershell
+rem
 rem	Version 2.1:
 rem
 rem 	Kill multiple instances of same task
@@ -33,9 +35,9 @@ setlocal EnableExtensions
 setlocal EnableDelayedExpansion
 
 if /i %1==sleep (
-	set action=nircmd standby
+	set action=call :sleep
 ) else if /i %1==switch (
-	set action=nircmd lockws
+	set action=rundll32.exe user32.dll,LockWorkStation
 ) else if /i %1==lock (
 rem LockWorkStation same as Switch User on Win10
 	set action=rundll32.exe user32.dll,LockWorkStation
@@ -48,14 +50,14 @@ rem LockWorkStation same as Switch User on Win10
 :KILLTASKS
 if [%2]==[] goto SYNCFILES
 rem Some tasks (e.g. Quicken) will not close when minimized
-	nircmd win normal process %2
-	for /f "tokens=1,11 delims=: " %%G in ('taskkill /fi "USERNAME eq %USERNAME%" /im %2') do (
+	set pname=%2
+	call :restore %pname:.exe=%
+	for /f "tokens=1,11 delims=: " %%G in ('taskkill /fi "USERNAME eq %USERNAME%" /im %pname%') do (
 		if %%G==SUCCESS (
 			set pid=%%H
 			set pid=!pid:.=!
-			call :balloontip "GracefulExit %1" "Closing %2 PID !pid! ..." 3000
-
-			nircmd waitprocess /!pid!
+			call :balloontip "GracefulExit %1" "Closing %pname% PID !pid! ..." 3000
+			powershell -Command "Wait-Process -Id !pid!"
 		)
 	)
 	shift /2
@@ -68,6 +70,23 @@ if exist %syncfile% (
 )
 
 %action%
+exit /b
+
+:restore
+rem Usage: call :restore Name
+rem Reference:
+rem		https://community.idera.com/database-tools/powershell/powertips/b/tips/posts/show-or-hide-windows
+rem		
+
+powershell -Command "$ErrorActionPreference = 'SilentlyContinue'; $code = '[DllImport(\"user32.dll\")] public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);'; $type = Add-Type -MemberDefinition $code -Name myAPI -PassThru; $process = Get-Process -Name '%~1'; $hwnd = $process.MainWindowHandle; $type::ShowWindowAsync($hwnd, 9)"
+exit /b
+
+:sleep
+rem Usage: call :sleep
+rem Reference:
+rem		https://superuser.com/questions/39584/what-is-the-command-to-use-to-put-your-computer-to-sleep-not-hibernate
+
+powershell -Command "Add-Type -Assembly System.Windows.Forms; [System.Windows.Forms.Application]::SetSuspendState('Suspend', $false, $true)"
 exit /b
 
 :balloontip

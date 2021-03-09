@@ -192,7 +192,7 @@ utility (_FreeFileSync_ in this case).  For each machine:
    
 . Create the `Realtime.ffs_real` file (see https://freefilesync.org/manual.php?topic=realtimesync):
 
-	* run `"C:\Program Files\FreeFileSync\RealTimeSync.exe"`
+	* run `"%PROGRAMFILES%\Program Files\FreeFileSync\RealTimeSync.exe"`
 	
 	* File -> Open `%CommonProgramFiles%\FreeFileSync\Config\Realtime.ffs_batch`
 	
@@ -253,7 +253,7 @@ sync the setting from the NAS to the local machine.
    
 . Create the `watched.ffs_real` file (see https://freefilesync.org/manual.php?topic=realtimesync):
 
-	* run `"C:\Program Files\FreeFileSync\RealTimeSync.exe"`
+	* run `"%PROGRAMFILES%\FreeFileSync\RealTimeSync.exe"`
 	
 	* File -> Open `%AppData%\FreeFileSync\Config\watched.ffs_batch`
 	
