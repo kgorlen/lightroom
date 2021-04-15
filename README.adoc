@@ -1,14 +1,15 @@
 = Lightroom Classic Catalogs on Network Attached Storage
 
 == Background
-I currently have about 30K photos (>1TB) stored on a QNAP TS-251+ NAS 
-(Network Attached Storage) device with a capacity of 3TB (mirrored). The 
-NAS is connected by gigabit Ethernet to a custom-built PC and a mini PC, 
-both running Windows 10. To make storage management as simple as 
-possible, the PC and laptop are configured _dataless_: virtually all 
-files that must be backed up are stored on the NAS<<dataless>>, which 
-runs https://duplicacy.com/[Duplicacy]<<duplicacy>> to back up files 
-nightly to external RAID 5 DAS (Direct Attached Storage) and off-site to 
+I currently have about 30K photos (>1TB) stored on a QNAP TS-253D NAS 
+(Network Attached Storage) device with a capacity of 6TB (mirrored). The 
+NAS is connected by 10Gbps Ethernet (1Gbps Ethernet also works well) to 
+a custom-built PC and a mini PC, both running Windows 10 Home. To make 
+storage management as simple as possible, the PC and laptop are 
+configured _dataless_: virtually all files that must be backed up are 
+stored on the NAS<<dataless>>, which runs 
+https://duplicacy.com/[Duplicacy]<<duplicacy>> to back up files nightly 
+to external RAID 5 DAS (Direct Attached Storage) and off-site to 
 https://www.backblaze.com/b2/cloud-storage.html/[Backblaze B2]<<b2>>. In 
 particular, each user's `Pictures` folder is located in their home 
 folder on the NAS. The capacity of the NAS can be easily expanded by 
@@ -19,7 +20,7 @@ Photoshop and other applications.
 
 I've been accessing the same Lightroom Classic (_LrC_) catalogs on a
 NAS since 2011, except for a few months in 2016 after replacing a
-Netgear ReadyNAS with the QNAP TS-251+, which had a defective SMB
+Netgear ReadyNAS with a QNAP TS-251+, which had a defective SMB
 implementation that caused _LrC_ and other failures.  During this
 period I modified the `lightroom.ffs_batch` and `full.ffs_batch` files
 described below to copy the catalog `*.lrcat*` files in addition to
@@ -69,26 +70,25 @@ the added risk of storing and accessing catalogs on the NAS.
 == Basic Setup
 _LrC_ will create and access catalogs on a network folder
 (`\\NAS0\home\Pictures\Lightroom` in this example) by means of a
-letter drive (`L:` in this example).
+Windows 10 _junction_ (`%HOMEPATH%\Lightroom` in this example).
 
-. Install the `catmap.bat` script according to the instructions in
-that file.
+For each _<user>_ on each machine running _LrC_:
 
-. The letter drive must be mapped when a user logs in.  Copy the
-sample `Startup\catmap.bat` shortcut to the startup folder for each
-user on each machine running _LrC_:
+. Run `cmd` as Administrator and execute the following commands:
 +
-		%AppData%\Microsoft\Windows\Start Menu\Programs\Startup
+		cd %HOMEPATH%\..\<user>
+		mklink /d Lightroom-symlink "\\NAS0\home\Pictures\Lightroom"
+		mklink /j Lightroom Lightroom-symlink
 +
-and if necessary, edit the shortcut `Target` property to use a
-different letter drive and network folder.
-+	
-Be sure to use the same letter drive and network folder for a
-given user on all PCs if synchronizing _LrC_ settings across PCs as
-described below.
+Be sure to use the same junction name for a given user on all PCs if 
+synchronizing _LrC_ settings across PCs as described below.
 
-. Create (or move) catalog folder(s) to `L:`, e.g. to `L:\Catalogs\My
-   Photos`
+. If necessary, move catalogs folders to the network folder, e.g. to
+	`%HOMEPATH%\Lightroom\Catalogs`.
+
+. Run _LrC_ while holding the `Alt` key to open the _Select Catalog_
+	dialog, and either _Choose a Different Catalog_ or _Create a New Catalog_
+	in a folder below the junction, e.g. to `%HOMEPATH%\Lightroom\Catalogs\Master`.
 
 When _LrC_ opens a catalog, it creates a `.lrcat.lock` file in the
 catalog's folder, which prevents other instances of _LrC_ from accessing
