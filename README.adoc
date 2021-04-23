@@ -27,6 +27,10 @@ described below to copy the catalog `*.lrcat*` files in addition to
 the settings to/from an internal SSD as a temporary, unreliable
 workaround.
 
+*NOTE:* I *_do not_* recommend QNAP: poor software quality, inadequate
+software regression testing, security vulnerabilities, bloatware, poor
+support, poor documentation.
+
 == CAUTION!
 Lightroom Classic (_LrC_) normally will not access a catalog that 
 resides on a network drive. In 2007, Adobe engineer Dan 
