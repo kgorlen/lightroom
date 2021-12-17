@@ -2,7 +2,7 @@
 @rem Kill tasks that lock shared files, then sleep, switch user, or log off
 @rem
 @rem Usage:
-@rem		gracefulexit {sleep|switch|lock} task1 task2 ...
+@rem		gracefulexit {sleep|switch|lock|logoff|pause} task1 task2 ... [/f task1 task2 ...]
 @rem
 @rem Installation:
 @rem		Customize location of FreeFileSync .ffs_batch file, if needed -- see below
@@ -16,19 +16,23 @@
 @rem Location of FreeFileSync .ffs_batch file:
 set syncfile=%APPDATA%\FreeFileSync\Config\full.ffs_batch
 
+@rem Version 2.4:
+@rem
+@rem	Add /f option to forcefully end tasks such as ssh.exe
+@rem
 @rem Version 2.3:
 @rem
 @rem	Retry taskkill if Wait-Process timeout
 @rem 	Echo commands for debugging
 @rem	
-@rem	Version 2.2:
+@rem Version 2.2:
 @rem
 @rem 	Replace nircmd with Powershell
 @rem
-@rem	Version 2.1:
+@rem Version 2.1:
 @rem
 @rem 	Kill multiple instances of same task
-@rem		Replace faulting nircmd trayballon with Powershell command
+@rem	Replace faulting nircmd trayballoon with Powershell command
 @rem
 
 if [%1]==[] (
@@ -56,10 +60,16 @@ if /i %1==sleep (
 
 :KILLTASKS
 if [%2]==[] goto SYNCFILES
+	if /i [%2]==[/f] (
+		set force=/f
+		shift /2
+		goto KILLTASKS
+	)
+
 @rem Some tasks (e.g. Quicken) will not close when minimized
 	set pname=%2
 	call :restore %pname:.exe=%
-	for /f "tokens=1,11 delims=: " %%G in ('taskkill /fi "USERNAME eq %USERNAME%" /im %pname%') do (
+	for /f "tokens=1,11 delims=: " %%G in ('taskkill %force% /fi "USERNAME eq %USERNAME%" /im %pname%') do (
 		if %%G==SUCCESS (
 			set pid=%%H
 			set pid=!pid:.=!
