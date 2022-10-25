@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FreeFileSync XmlType="BATCH" XmlFormat="16">
+<FreeFileSync XmlType="BATCH" XmlFormat="17">
     <Compare>
         <Variant>TimeAndSize</Variant>
         <Symlinks>Exclude</Symlinks>
@@ -16,14 +16,22 @@
             <Item>*</Item>
         </Include>
         <Exclude>
-            <Item>\System Volume Information\</Item>
-            <Item>\$Recycle.Bin\</Item>
-            <Item>\RECYCLER\</Item>
-            <Item>\RECYCLED\</Item>
+            <Item>*cache*</Item>
+            <Item>*ntuser.dat*</Item>
+            <Item>*\$RECYCLE.BIN\</Item>
+            <Item>*\$RECYCLED\</Item>
+            <Item>*\$RECYCLER\</Item>
+            <Item>*\*.log</Item>
+            <Item>*\*.temp</Item>
+            <Item>*\*.tmp</Item>
+            <Item>*\.stignore</Item>
+            <Item>*\.stversions</Item>
+            <Item>*\@Recycle</Item>
             <Item>*\desktop.ini</Item>
+            <Item>*\RECYCLER\</Item>
             <Item>*\thumbs.db</Item>
             <Item>*\_gsdata_</Item>
-            <Item>*\@Recycle</Item>
+            <Item>\System Volume Information\</Item>
         </Exclude>
         <TimeSpan Type="None">0</TimeSpan>
         <SizeMin Unit="None">0</SizeMin>

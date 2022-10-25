@@ -221,36 +221,28 @@ utility (_FreeFileSync_ in this case).  For each machine:
 1. Restart, then check the `%CommonProgramFiles%\FreeFileSync\Log` folder to confirm that folders
 are synchronizing.
 
-== *OPTIONAL:* Synchronize Photoshop settings across all machines
+== *OPTIONAL:* Synchronize Photoshop preferences across all machines
 
-Photoshop, Bridge, CameraRaw, Color, and Plugins settings are
+Photoshop, Bridge, CameraRaw, Color, LensCorrection, and Plugins preferences are
 synchronized when updated by a file synchronization utility
 (_FreeFileSync_ in this case), and also by `gracefulexit.bat`
 on sleep, switch user, and logoff.
 
-. Create folders on the NAS for each user's Photoshop settings, e.g.:
+. Create a folder on the NAS for each user's Photoshop preferences, e.g.:
 +
-		\\<my NAS>\home\AppData\Roaming\Adobe\Photoshop*
-		\\<my NAS>\home\AppData\Roaming\Adobe\Bridge*
-		\\<my NAS>\home\AppData\Roaming\Adobe\CameraRaw
-		\\<my NAS>\home\AppData\Roaming\Adobe\Color
-		\\<my NAS>\home\AppData\Roaming\Adobe\Plugins
-+		
-The exact names of the `Photoshop` and `Bridge` folders depend upon
-the versions installed, e.g. `Photoshop 2021` and `Bridge 2021`.
+		\\<my NAS>\home\AppData\Roaming\Adobe
 
 . Copy the following files to each user's `%AppData%\FreeFileSync\Config` folder:
 
 		full.ffs_batch
 		watched.ffs_batch
 
-. Edit these files to change `NAS0` to the name of your NAS and
-`Photoshop` and `Bridge` folders to match the versions installed.  Folder
+. Edit these files to change `NAS0` to the name of your NAS.  Folder
 pairs for the `Affinity` settings, `Desktop`, and `Favorites` are
 included; remove if not wanted.
 
 . For each user, open `full.ffs_batch` with _FFS_ on the machine on 
-which the latest Photshop settings reside, sync these to the NAS, then 
+which the latest Photshop preferences reside, sync these to the NAS, then 
 open `full.ffs_batch` with _FFS_ on all other machines and manually 
 sync the setting from the NAS to the local machine. 
 
