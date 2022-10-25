@@ -223,7 +223,7 @@ are synchronizing.
 
 == *OPTIONAL:* Synchronize Photoshop preferences across all machines
 
-Photoshop, Bridge, CameraRaw, Color, LensCorrection, and Plugins preferences are
+Photoshop, Bridge, CameraRaw, Color, LensCorrection, and Plugins preferences<<PSprefs>> are
 synchronized when updated by a file synchronization utility
 (_FreeFileSync_ in this case), and also by `gracefulexit.bat`
 on sleep, switch user, and logoff.
@@ -296,3 +296,5 @@ folder to confirm that folders are synchronizing.
 * [[[lock,15]]] _Error: Lightroom catalog cannot be opened, More information_, https://helpx.adobe.com/lightroom-classic/kb/lightroom-error-catalog-cannot-be-opened-lrcat-lock.html
 
 * [[[veto,16]]] _How to prevent samba from holding a file lock after a client disconnects_, https://serverfault.com/questions/204812/how-to-prevent-samba-from-holding-a-file-lock-after-a-client-disconnects
+
+* [[[PSprefs,17]]] _Preference file functions, names, locations | Photoshop_, https://helpx.adobe.com/photoshop/kb/preference-file-names-locations-photoshop.html
