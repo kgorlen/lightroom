@@ -118,9 +118,9 @@ thus, such a backup is not reliably valid.
 
 		veto oplock files = /*.lock/sync.ffs_db/
 
-== *OPTIONAL:* Synchronize _LrC_ settings<<LrCprefs>> across all PCs
+== *OPTIONAL:* Synchronize _LrC_ settings across all PCs
 
-_LrC_ changes settings files frequently when running, so synchronization
+_LrC_ changes settings files<<LrCprefs>> frequently when running, so synchronization
 is implemented by running _LrC_ via a shortcut which, in turn, runs
 a file synchronization utility (_FreeFileSync_ in this case) before and
 after running _LrC_ to sync settings from/to a folder on the NAS:
