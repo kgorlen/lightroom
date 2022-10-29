@@ -118,7 +118,7 @@ thus, such a backup is not reliably valid.
 
 		veto oplock files = /*.lock/sync.ffs_db/
 
-== *OPTIONAL:* Synchronize _LrC_ settings across all PCs
+== *OPTIONAL:* Synchronize _LrC_ settings<<LrCprefs>> across all PCs
 
 _LrC_ changes settings files frequently when running, so synchronization
 is implemented by running _LrC_ via a shortcut which, in turn, runs
@@ -297,4 +297,6 @@ folder to confirm that folders are synchronizing.
 
 * [[[veto,16]]] _How to prevent samba from holding a file lock after a client disconnects_, https://serverfault.com/questions/204812/how-to-prevent-samba-from-holding-a-file-lock-after-a-client-disconnects
 
-* [[[PSprefs,17]]] _Preference file functions, names, locations | Photoshop_, https://helpx.adobe.com/photoshop/kb/preference-file-names-locations-photoshop.html
+* [[[LrCprefs,17]]] _Preference file and other file locations | Lightroom Classic_, https://helpx.adobe.com/lightroom-classic/kb/preference-file-and-other-file-locations.html
+
+* [[[PSprefs,18]]] _Preference file functions, names, locations | Photoshop_, https://helpx.adobe.com/photoshop/kb/preference-file-names-locations-photoshop.html

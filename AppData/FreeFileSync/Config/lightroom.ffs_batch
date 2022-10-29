@@ -39,6 +39,19 @@
     </Filter>
     <FolderPairs>
         <Pair>
+            <Left>%AppData%\Adobe\CameraRaw\Settings</Left>
+            <Right>\\NAS0\home\AppData\Roaming\Adobe\CameraRaw\Settings</Right>
+            <Filter>
+                <Include>
+                    <Item>*.xmp</Item>
+                </Include>
+                <Exclude/>
+                <TimeSpan Type="None">0</TimeSpan>
+                <SizeMin Unit="None">0</SizeMin>
+                <SizeMax Unit="None">0</SizeMax>
+            </Filter>
+        </Pair>
+        <Pair>
             <Left>%AppData%\Adobe\Lightroom</Left>
             <Right>\\NAS0\home\AppData\Roaming\Adobe\Lightroom</Right>
             <Filter>
