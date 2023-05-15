@@ -1,7 +1,7 @@
 = Lightroom Classic Catalogs on Network Attached Storage
 
 == Background
-I currently have about 30K photos (>1TB) stored on a QNAP TS-253D NAS 
+I currently have over 37K photos (>1TB) stored on a QNAP TS-253D NAS 
 (Network Attached Storage) device with a capacity of 6TB (mirrored). The 
 NAS is connected by 10Gbps Ethernet (1Gbps Ethernet also works well) to 
 a custom-built PC and a mini PC, both running Windows 10 Home. To make 
@@ -55,8 +55,7 @@ One Drive, etc.
 
 Also, _LrC_ currently requires that the `Previews.lrdata` folder must
 reside in the same folder as the catalog. Thus, when the catalog is on
-a network drive, previews will also reside there, possibly slowing
-performance.
+a network drive, previews will also reside there, slowing performance.
 
 Setting up the NAS:
 
@@ -273,7 +272,7 @@ folder to confirm that folders are synchronizing.
 
 * [[[Rellis,4]]] link:https://community.adobe.com/t5/lightroom-classic/operating-lightroom-cc-classic-via-network-drive/m-p/9997623?page=1#M115849[_Post by johnrellis on_ `feedback.photoshop.com`]
 
-* [[[Tull,5]]] link:++https://feedback.photoshop.com/photoshop_family/topics/multi_user_multi_computer?topic-reply-list[settings][filter_by]=all&topic-reply-list[settings][reply_id]=5744549#reply_5744549++[_Reply by Dan Tull, Adobe Employee on_ `feedback.photoshop.com`]
+* [[[Tull,5]]] link:++https://community.adobe.com/t5/lightroom-classic-ideas/p-allow-catalog-to-be-stored-on-a-networked-drive/idc-p/12294181/page/2#M10264++[_Post by Dan Tull on_ `community.adobe.com`]
 
 * [[[SAMBA,6]]] _SMB Filesystems for Linux_, https://www.samba.org/samba/docs/SambaIntro.html
 
